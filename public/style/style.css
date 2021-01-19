@@ -1,0 +1,339 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: -webkit-gradient(linear, left bottom, right top, from(#d2d2e6), to(#f0f0ff));
+  background: linear-gradient(to top right, #d2d2e6, #f0f0ff);
+  font-size: 1.2em;
+  margin-top: 0;
+}
+
+.circle,
+.square {
+  background: white;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.466)), to(rgba(255, 255, 255, 0.096)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.466), rgba(255, 255, 255, 0.096));
+  height: 10rem;
+  width: 10rem;
+  position: absolute;
+}
+
+.circle {
+  top: 75%;
+  left: 33%;
+  border-radius: 10%;
+  background: rgba(255, 32, 32, 0.445);
+  display: none;
+}
+
+.square {
+  top: 15%;
+  left: 57%;
+  border-radius: 50%;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(229, 231, 85, 0.692)), to(rgba(238, 240, 124, 0.658)));
+  background: linear-gradient(to right bottom, rgba(229, 231, 85, 0.692), rgba(238, 240, 124, 0.658));
+}
+
+.header {
+  height: 6vh;
+  background: -webkit-gradient(linear, right bottom, left top, from(#f0f0ff), to(#d2d2e6));
+  background: linear-gradient(to top left, #f0f0ff, #d2d2e6);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+}
+
+.header ul {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: left;
+      align-content: left;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin-top: 12px;
+}
+
+.header ul ::after {
+  content: "";
+  width: 40%;
+}
+
+.header ul img {
+  height: 40px;
+  width: 40px;
+  margin-bottom: 10px;
+  top: 4px;
+}
+
+.header li a {
+  margin-top: 10px;
+  padding-top: 10px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #59a169;
+  font-weight: bold;
+}
+
+.main {
+  background: -webkit-gradient(linear, left bottom, right top, from(#d2d2e6), to(#f0f0ff));
+  background: linear-gradient(to top right, #d2d2e6, #f0f0ff);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  height: 94vh;
+}
+
+.main .drag {
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 255, 255, 0.466)), to(rgba(255, 255, 255, 0.096)));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.466), rgba(255, 255, 255, 0.096));
+  width: 500px;
+  height: auto;
+  min-height: 600px;
+  border: 1px solid #f0f0ff;
+  border-radius: 1.5rem;
+  padding: 20px;
+  -webkit-box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.3);
+          box-shadow: -1rem 0 3rem rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(2rem);
+          backdrop-filter: blur(2rem);
+  z-index: 5;
+  border: none;
+  -webkit-transition: all 4s;
+  transition: all 4s;
+}
+
+.main .grow {
+  min-height: 600px;
+  -webkit-transition: linear 4s;
+  transition: linear 4s;
+}
+
+.main .pbar,
+.main .progression {
+  width: 90%;
+  height: 20px;
+}
+
+.main .progression {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 0;
+  height: 50px;
+}
+
+.main .progression .count {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 90%;
+  margin-left: 20px;
+}
+
+.main .progression div {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 0.9rem !important;
+  margin-right: 15px;
+}
+
+.main .progression .bold {
+  font-weight: bold;
+  font-size: 0.85rem !important;
+}
+
+.main .progress div {
+  font-size: 1rem;
+}
+
+.main .progress img {
+  height: 40px;
+  width: 40px;
+}
+
+.main .progress #logformat {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 8px;
+}
+
+.main .progress .uploading {
+  font-size: 1.1rem;
+  font-weight: bold;
+  -ms-flex-line-pack: initial;
+      align-content: initial;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  color: rgba(66, 66, 66, 0.521);
+}
+
+.main .progress #completed {
+  height: 28px;
+  width: 28px;
+}
+
+.main .progress .file-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .dragarea {
+  width: 100%;
+  background: #f0f0f3;
+  height: 200px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%234492f8' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.main .dragarea #folder {
+  height: 40px;
+  width: 40px;
+}
+
+.main h1 {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.main p {
+  font-size: 0.6em;
+  color: #747474;
+  margin-bottom: 30px;
+}
+
+.main .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  justify-items: center;
+  -webkit-transition: all 3s;
+  transition: all 3s;
+}
+
+.main .btns #uploadLogs {
+  background-color: #69c0f0;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.main .btns #analyzeLogs {
+  background-color: #6fc682;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.active {
+  opacity: 1;
+  height: 30px;
+  -webkit-transition: opacity 0.3s 0.1s, height 0.3s;
+  transition: opacity 0.3s 0.1s, height 0.3s;
+}
+/*# sourceMappingURL=style.css.map */
